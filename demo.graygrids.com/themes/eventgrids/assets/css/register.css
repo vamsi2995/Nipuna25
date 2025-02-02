@@ -1,0 +1,169 @@
+/* General Styling */
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(45deg, #3813c2, #F20487);
+  margin: 0;
+  padding: 0;
+  color: #fff;
+}
+
+h1 {
+  text-align: center;
+  margin: 20px 0;
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 700;
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Event Cards */
+.event-card {
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  margin-bottom: 30px;
+  transition: background-color 0.3s ease;
+}
+
+.event-card:hover {
+  background-color: #222444;
+  color: #fff;
+}
+
+.card-body {
+  padding: 20px;
+  color: #222;
+}
+.card-body:hover{
+  color: #fff;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.card-title::before {
+  font-size: 2rem;
+  font-weight: bold;
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  color: rgba(34, 34, 34, 0.2);
+}
+/* Form Styling */
+.form-container {
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  padding: 25px;
+  color: #222;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.form-control {
+  border: 2px solid #888;
+  border-radius: 8px;
+  padding: 10px;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.form-control:focus {
+  border-color: #F20487;
+  box-shadow: 0 0 10px rgba(242, 4, 135, 0.5);
+}
+
+.form-check-input {
+  accent-color: #3813c2;
+  transform: scale(1.3);
+  cursor: pointer;
+}
+
+.form-check-input:hover,
+.form-check-input:focus {
+  background-color: #3813c2;
+}
+
+.form-check-label {
+  font-size: 1rem;
+  color: #101130;
+  transition: color 0.3s ease;
+}
+
+.event-card:hover .form-check-label {
+  color: #fff;
+}
+
+/* Buttons */
+.payment-button {
+  display: block;
+  width: 100%;
+  background-color: #3813c2;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.payment-button:hover {
+  background-color: #F20487;
+  box-shadow: 0 10px 20px rgba(242, 4, 135, 0.5);
+}
+
+.payment-container {
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  padding: 25px;
+  color: #222;
+  max-width: 650px;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+#cart-total-price {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Responsive Styles */
+@media (max-width: 767px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .event-card {
+    margin-bottom: 20px;
+  }
+
+  .card-title {
+    font-size: 1.3rem;
+  }
+
+  .form-container,
+  .payment-container {
+    padding: 15px;
+  }
+
+  .form-control {
+    font-size: 0.9rem;
+  }
+}
