@@ -60,7 +60,7 @@
 
         #list {
             position: absolute;
-            right: 18%;
+            right: 14%;
             top: 70%;
             list-style: none;
             border: 1px solid black;
@@ -158,11 +158,12 @@
             display: none;
             position: fixed;
             bottom: 30%;
-            right: 20%;
+            right: 30%;
             border: 3px solid #f1f1f1;
             z-index: 9;
             text-align: center;
             padding: 15px;
+            width: 40%;
         }
 
         .popup-card .btn {
@@ -394,16 +395,15 @@
                     <a target="_blank" href="register_form.html" class="regBtn">Register</a>
                 </div>
             </div>
-
             <div class="popup-card" id="popup-id1">
-                <h2>CODE COMBAT</h2>
-                <li>The participants should register individually.</li>
-                <li>Each person will allowed to use single pc only.</li>
-                <li>Each participant should submit a single solution to each problem.</li>
-                <li>It consists of 2 categories. Programing and Web designing.</li>
-                <li>Final winner will be selected by panel of judges only.</li>
-                <li>Contact: 9618379199</li>
-                <button type="button" class="btn cancel" onclick="closeForm('popup-id1')">Close</button>
+                    <h2>CODE COMBAT</h2>
+                    <li>The participants should register individually.</li>
+                    <li>Each person will allowed to use single pc only.</li>
+                    <li>Each participant should submit a single solution to each problem.</li>
+                    <li>It consists of 2 categories. Programing and Web designing.</li>
+                    <li>Final winner will be selected by panel of judges only.</li>
+                    <li>Contact: 9618379199</li>
+                    <button type="button" class="btn cancel" onclick="closeForm('popup-id1')">Close</button>
             </div>
 
 
@@ -1009,6 +1009,9 @@
 
         function openForm(p1) {
             document.getElementById(p1).style.display = "block";
+            if (p1 == 'popup-id12') {
+                document.getElementById('popup-id12').style.width = "55%";
+            }       
         }
 
         function closeForm(p2) {
