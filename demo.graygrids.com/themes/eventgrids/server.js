@@ -40,6 +40,27 @@ app.post('/submit-contact', (req, res) => {
     });
 });
 
+app.post('/register', (req, res) => {
+    const { name, email, phone, college, year, course, location } = req.body;
+
+    if (!name || !email || !phone || !college || !year || !course || !location) {
+        return res.status(400).send('All fields are required.');
+    }
+
+    if (isNaN(phone) || isNaN(year)) {
+        return res.status(400).send('Phone and Year should be valid numbers.');
+    }
+
+    const sql = `INSERT INTO registrations (name, email, phone, college, year, course, location) VALUES (?, ?, ?, ?, ?, ?, ?)`;
+    db.query(sql, [name, email, phone, college, year, course, location], (err, result) => {
+        if (err) {
+            console.error('Error inserting student data:', err);
+            return res.status(500).send('Server error');
+        }
+        res.status(200).send('Student registered successfully!');
+    });
+});
+
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
 });

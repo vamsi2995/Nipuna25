@@ -5328,9 +5328,14 @@ blockquote span {
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 576px) {
   .footer .single-footer.f-about {
+    margin-top: 80px;
     padding: 0;
+    font-size: 5px;
+  }
+  .f-about p{
+    width: 50px;
   }
 }
 

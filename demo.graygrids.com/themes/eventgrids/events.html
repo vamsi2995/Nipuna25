@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Events</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" type="image/x-icon" href="./assets/images/NIPUNAHD.png" />
+
+    <!-- ========================= CSS here ========================= -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/LineIcons.3.0.css" />
+    <link rel="stylesheet" href="assets/css/animate.css" />
+    <link rel="stylesheet" href="assets/css/tiny-slider.css" />
+    <link rel="stylesheet" href="assets/css/glightbox.min.css" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- FontAwesome CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css">
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    
+    <style>
+        
+    /* ------------------------------------------------------*/
+        .eventsPage {
+            margin: 1rem auto 0rem;
+            padding: 0.7rem;
+        }
+
+        .events-display {
+            margin: auto;
+            padding: 1rem;
+            background-color: #0d1028;
+            border-radius: 0.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .event-content h5 {
+            font-size: 16px;
+            font-weight: 1000;
+        }
+
+        #myInput {
+            width: 300px;
+            height: 43px;
+        }
+
+        #list {
+            position: absolute;
+            right: 18%;
+            top: 70%;
+            list-style: none;
+            border: 1px solid black;
+            padding: 5px 10px 5px 10px;
+            background-color: white;
+            display: none;
+            z-index: 3;
+        }
+
+        #list li {
+            color: black;
+        }
+
+        .card {
+            margin: 2rem auto;
+            padding: 0.8rem;
+            border: none;
+            text-align: center;
+            background-color: #ffffff;
+            border-radius: 0.2rem;
+            box-shadow: 0 10px 15px solid black;
+            max-height: fit-content;
+            max-width: fit-content;
+        }
+
+        .card:hover {
+            box-shadow: rgba(1, 1, 1, 1) 0px 15px 30px;
+            transform: scale(1.1);
+        }
+
+        .event-content {
+            padding: 1rem;
+        }
+
+        .cardImg img {
+            height: 300px;
+            width: 350px;
+        }
+
+        .cardImg:hover {
+            transform: scale(1);
+        }
+
+
+        .events-filter {
+            margin: 100px 80px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .show {
+            display: block;
+        }
+
+        .eventsPage .event-btn {
+            margin: 10px;
+            border: none;
+            outline: none;
+            padding: 12px 16px;
+            background-color: #eef2eb;
+            cursor: pointer;
+            color: #000000;
+        }
+
+        .eventsPage .event-btn:hover {
+            background-color: #ddd;
+        }
+
+        .event-content button {
+            background-color: #99c0cf;
+            font-size: 12px;
+            padding: 5px;
+            margin: 8px;
+        }
+
+        .event-content button:hover {
+            background-color: #091db0;
+            color: white;
+        }
+
+        .descBtn {
+            margin: 0 6px;
+            border: none;
+        }
+
+        .regBtn {
+            margin: 0 6px;
+            border: none;
+        }
+
+        .popup-card {
+            background-color: white;
+            display: none;
+            position: fixed;
+            bottom: 30%;
+            right: 20%;
+            border: 3px solid #f1f1f1;
+            z-index: 9;
+            text-align: center;
+            padding: 15px;
+        }
+
+        .popup-card .btn {
+            background-color: #522bec;
+            color: white;
+            font-size: 12px;
+            padding: 16px 20px;
+            border: none;
+            cursor: pointer;
+            width: 20%;
+            opacity: 0.8;
+        }
+
+        @media screen and (max-width:400px) {
+            .cardImg {
+                height: 180px;
+                width: 270px;
+                object-fit: cover;
+            }
+
+            .event-content button {
+                font-size: 10px;
+                padding: 3px;
+                margin: 5px;
+            }
+        }
+
+        @media screen and (max-width:350px) {
+            .cardImg {
+                height: 150px;
+                width: 225px;
+                object-fit: cover;
+            }
+
+            .event-content {
+                padding: 0.8rem;
+            }
+        }
+
+        @media screen and (max-width:300px) {
+            .cardImg {
+                height: 120px;
+                width: 180px;
+                object-fit: cover;
+            }
+
+            .event-content h5 {
+                font-size: 12px;
+                font-weight: 1000;
+            }
+
+            .event-content {
+                padding: 0.7rem;
+            }
+        }
+
+
+        @media screen and (max-width:1300px) {
+            .eventsPage .event-btn {
+                margin: 10px;
+                padding: 12px 16px;
+            }
+
+            .filter-search input {
+                padding: 5px;
+                width: 200px;
+                height: 30px;
+                margin: 10px auto;
+            }
+        }
+
+        @media screen and (max-width:500px) {
+            #myInput {
+                width: 200px;
+                height: 43px;
+            }
+
+            .popup-card .btn {
+                padding: 10px;
+                font-size: 8px;
+            }
+
+        }
+
+        @media screen and (max-width:380px) {
+            #myInput {
+                width: 150px;
+                height: 43px;
+            }
+        }
+    </style>
+    </style>
+</head>
+
+<body>
+    <!--[if lte IE 9]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+        your experience and security.
+      </p>
+    <![endif]-->
+
+     <!-- Preloader -->
+     <div class="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-icon">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+    <!-- /End Preloader -->
+
+    <!-- Start Header Area -->
+    <header class="header navbar-area">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-12">
+                    <div class="nav-inner">
+                        <!-- Start Navbar -->
+                        <nav class="navbar navbar-expand-lg">
+                            <a class="navbar-brand" href="index.html" style="color: white;">
+                                <img src="assets/images/NIPUNAHD.png" alt="Logo">NIPUNA 2025
+                            </a>
+                            <button class="navbar-toggler mobile-menu-btn" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="toggler-icon"></span>  
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                                <ul id="nav" class="navbar-nav ms-auto">
+                                    <li class="nav-item">
+                                        <a href="index.html" aria-label="Toggle navigation">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="about-us.html" aria-label="Toggle navigation">About</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="events.html" aria-label="Toggle navigation">Events</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="team.html" aria-label="Toggle navigation">Team</a>
+                                    </li>
+                                    
+                                    <li class="nav-item">
+                                        <a href="contact.html" aria-label="Toggle navigation">Contact</a>
+                                    </li>
+                                </ul>
+                            </div> <!-- navbar collapse -->
+                            <div class="button">
+                                <a href="register_form.html" class="btn">Register Now<i class="lni lni-ticket"></i></a>
+                            </div>
+                        </nav>
+                        <!-- End Navbar -->
+                    </div>
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </header>
+    <!-- End Header Area -->
+
+    <!-- Start Breadcrumbs -->
+    <div class="breadcrumbs">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 offset-lg-2 col-md-12 col-12">
+                    <div class="breadcrumbs-content">
+                        <h1 class="page-title">SRKR ISTE (2024-2025)</h1>
+                        <ul class="breadcrumb-nav">
+                            <li><a href="index.html">Home</a></li>
+                            <li>SRKR ISTE (2024-2025)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumbs -->
+    
+    <div class="eventsPage">
+        <div class="events-filter" id="myBtnContainer">
+            <div class="filter-btn">
+                <button class="event-btn" onclick="filterSelection('all')"> Show all</button>
+                <button class="event-btn" onclick="filterSelection('Tech')"> Technical</button>
+                <button class="event-btn" onclick="filterSelection('Manage')">Manegerial</button>
+                <button class="event-btn" onclick="filterSelection('Present')"> Presentational</button>
+                <button class="event-btn" onclick="filterSelection('lit')"> Literature</button>
+                <button class="event-btn" onclick="filterSelection('Art')"> Artistic</button>
+            </div>
+            <div class="filter-search">
+                <input type="text" id="myInput" placeholder="Search" onkeyup="search()">
+                <ul id="list">
+                    <li class="item"><a href="#alliance" style="text-decoration: none;">Alliance</a></li>
+                    <li class="item"><a href="#artSpace" style="text-decoration: none;">Art Space</a></li>
+                    <li class="item"><a href="#businessCapital" style="text-decoration: none;">Business Capital</a></li>
+                    <li class="item"><a href="#clickOMania" style="text-decoration: none;">Click O Mania</a></li>
+                    <li class="item"><a href="#codeCombat" style="text-decoration: none;">Code Combat</a></li>
+                    <li class="item"><a href="#electrolance" style="text-decoration: none;">Electrolance</a></li>
+                    <li class="item"><a href="#iplAuction" style="text-decoration: none;">IPL Auction</a></li>
+                    <li class="item"><a href="#mechonica" style="text-decoration: none;">Mechonica</a></li>
+                    <li class="item"><a href="#mindQuest" style="text-decoration: none;">Mind Quest</a></li>
+                    <li class="item"><a href="#modelMarathon" style="text-decoration: none;">Model Marathon</a></li>
+                    <li class="item"><a href="#modelUnitedNations" style="text-decoration: none;">Model United
+                            Nations</a></li>
+                    <li class="item"><a href="#mysteryMansion" style="text-decoration: none;">Mystery Mansion</a></li>
+                    <li class="item"><a href="#posterArena" style="text-decoration: none;">Poster Arena</a></li>
+                    <li class="item"><a href="#presencia" style="text-decoration: none;">Presencia</a></li>
+                    <li class="item"><a href="#struqta" style="text-decoration: none;">Struqta</a></li>
+                    <li class="item"><a href="#uniqus" style="text-decoration: none;">Uniqus</a></li>
+                    <li class="item"><a href="#wordSphere" style="text-decoration: none;">Word Sphere</a></li>
+                    <p id="demo">No Results</p>
+                </ul>
+            </div>
+        </div>
+        <div class="events-display">
+            <div class="card Tech filterDiv" id="codeCombat">
+                <div class="cardImg">
+                    <img src="./assets/images/events/codecombatfinalrgbs.jpg" alt="Img">
+                </div>
+                <br>
+                <div class="event-content">
+                    <h5>CODE COMBAT</h5>
+                    <h6>Fee: 60/-</h6>
+                    <hr>
+                    <button class="descBtn open-button" onclick="openForm('popup-id1')">Description</button>
+                    <a target="_blank" href="register_form.html" class="regBtn">Register</a>
+                </div>
+            </div>
+
+            <div class="popup-card" id="popup-id1">
+                <h2>CODE COMBAT</h2>
+                <li>The participants should register individually.</li>
+                <li>Each person will allowed to use single pc only.</li>
+                <li>Each participant should submit a single solution to each problem.</li>
+                <li>It consists of 2 categories. Programing and Web designing.</li>
+                <li>Final winner will be selected by panel of judges only.</li>
+                <li>Contact: 9618379199</li>
+                <button type="button" class="btn cancel" onclick="closeForm('popup-id1')">Close</button>
+            </div>
+
+
+
+            <div class="card Tech  filterDiv" id="mechonica">
+                <div class="cardImg">
+                    <img src="./assets/images/events/mechonicaFINALRGBS.jpg" alt="Img">
+                </div><br>
+                <div class="event-content">
+                    <h5>MECHONICA</h5>
+                    <h6>Fee: 60/-</h6>
+                    <hr>
+                    <button class="descBtn open-button" onclick="openForm('popup-id2')">Description</button>
+                    <a target="_blank" href="register_form.html" class="regBtn">Register</a>
+                </div>
+            </div>
+            <div class="popup-card" id="popup-id2">
+                <h2>MECHONICA</h2>
+                <li>It includes 3 Rounds</li>
+                <li>1st Round consists of theory and problematic questions based on mechanical Engineering.</li>
+                <li>2nd Round : Name the unknown parts and explain its working.</li>
+                <li>3rd Round : In this round, one diagarm will be shown on the projector, and they have to draw on
+                    CAM/CAD/CATIA in a specific time.</li>
+                <li>Contact: 9573277952</li>
+                <button type="button" class="btn cancel" onclick="closeForm('popup-id2')">Close</button>
+            </div>
+
+
+
+            <div class="card Tech filterDiv" id="electrolance">
+                <div class="cardImg">
+                    <img src="./assets/images/events/ELECTROLANCEFINALRGB.jpg" alt="Img">
+                </div><br>
+                <div class="event-content">
+                    <h5>ELECTROLANCE</h5>
+                    <h6>Fee: 60/-</h6>
+                    <hr>
+                    <button class="descBtn open-button" onclick="openForm('popup-id3')">Description</button>
+                    <a target="_blank" href="register_form.html" class="regBtn">Register</a>
+                </div>
+            </div>
+            <div class="popup-card" id="popup-id3">
+                <h2>ELECTROLANCE</h2>
+                <li>1st round screening questions will be asked based on aptitude</li>
+                <li>2nd round questions related to ece and eee </li>
+                <li>3rd round- mock interview</li>
+                <li>Contact: 9640748058, 7989182841</li>
+                <button type="button" class="btn cancel" onclick="closeForm('popup-id3')">Close</button>
+            </div>
+
+
+
+            <div class="card Tech filterDiv" id="struqta">
+                <div class="cardImg">
+                    <img src="./assets/images/events/struqtargbs.jpg" alt="Img">
+                </div><br>
+                <div class="event-content">
+                    <h5>STRUQTA</h5>
+                    <h6>Fee: 60/-</h6>
+                    <hr>
+                    <button class="descBtn open-button" onclick="openForm('popup-id4')">Description</button>
+                    <a target="_blank" href="register_form.html" class="regBtn">Register</a>
+                </div>
+            </div>
+            <div class="popup-card" id="popup-id4">
+                <h2>STRUQTA</h2>
+                <li>Round 1-Multiple Choice questions on aptitude and core related</li>
+                <li>Round 2-ppt questions</li>
+                <li>We will display some questions related core and famous places you have to answer it.</li>
+                <li>Round 3-Buliding design drawing</li>
+                <li>Contact: 9866955009</li>
+                <button type="button" class="btn cancel" onclick="closeForm('popup-id4')">Close</button>
+            </div>
+
+
+
+            <div class="card Manage filterDiv" id="businessCapital">
+                <div class="cardImg">
+                    <img src="./assets/images/events/BUSINESSCAPITALRGB.jpg" alt="Img">
+                </div><br>
+                <div class="event-content">
+                    <h5>BUSINESS CAPITAL</h5>
+                    <h6>Fee: 60/-</h6>
+                    <hr>
+                    <button class="descBtn open-button" onclick="openForm('popup-id5')">Description</button>
+                    <a target="_blank" href="register_form.html" class="regBtn">Register</a>
+                </div>
+            </div>
+            <div class="popup-card" id="popup-id5">
+                <h2>BUSINESS CAPITAL</h2>
+                <li>In this event you will be having 2 rounds.</li>
+                <li>1st Round consists of problems related to basic maths.</li>
+                <li>2nd Round : QUalified persons will be divided into 2 groups i.Stocks ii.Tenders</li>
+                <li>judgement criteria is based on the optimal usage of money.</li>
+                <li>Contact: 9866955009, 9515745345</li>
+                <button type="button" class="btn cancel" onclick="closeForm('popup-id5')">Close</button>
+            </div>
+
+
+
+            <div class="card Manage filterDiv" id="mindQuest">
+                <div class="cardImg">
+                    <img src="./assets/images/events/MINDQUESTFINALRGB.jpg" alt="Img">
+                </div><br>
+                <div class="event-content">
+                    <h5>MIND-QUEST</h5>
+                    <h6>Fee: 60/-</h6>
+                    <hr>
+                    <button class="descBtn open-button" onclick="openForm('popup-id6')">Description</button>
+                    <a target="_blank" href="register_form.html" class="regBtn">Register</a>
+                </div>
+            </div>
+            <div class="popup-card" id="popup-id6">
+                <h2>MIND-QUEST</h2>
+                <li>In this event you will be having 3 rounds</li>
+                <li>1st round consists of logical questions, tricks, puzzles</li>
+                <li>2nd round: qualified persons should solve some logical questions, tricks, puzzles</li>
+                <li>3rd round: 1 vs 1 there will be some rules following those they should answer some questions. </li>
+                <li>All three rounds has time limit.</li>
+                <li>Contact: 7780549688</li>
+                <button type="button" class="btn cancel" onclick="closeForm('popup-id6')">Close</button>
+            </div>
+
+
+
+            <div class="card Manage filterDiv" id="alliance">
+                <div class="cardImg">
+                    <img src="./assets/images/events/genisis.jpg" alt="Img">
+                </div><br>
+                <div class="event-content">
+                    <h5>GENESIS</h5>
+                    <h6>Fee: 60/-</h6>
+                    <hr>
+                    <button class="descBtn open-button" onclick="openForm('popup-id7')">Description</button>
+                    <a target="_blank" href="register_form.html" class="regBtn">Register</a>
+                </div>
+            </div>
+            <div class="popup-card" id="popup-id7">
+                <h2>GENESIS</h2>
+                <p>This event is open for all the branch people. </p>
+                <li>Contact: 9666631189</li>
+                <button type="button" class="btn cancel" onclick="closeForm('popup-id7')">Close</button>
+            </div>
+
+            <div class="card Manage filterDiv" id="mysteryMansion">
+                <div class="cardImg">
+                    <img src="./assets/images/events/MYSTERYMANSIONFINALRGB.jpg" alt="Img">
+                </div><br>
+                <div class="event-content">
+                    <h5>MYSTERY MANSION</h5>
+                    <h6>Fee: 60/-</h6>
+                    <hr>
+                    <button class="descBtn open-button" onclick="openForm('popup-id8')">Description</button>
+                    <a target="_blank" href="register_form.html" class="regBtn">Register</a>
+                </div>
+            </div>
+            <div class="popup-card" id="popup-id8">
+                <h2>MYSTERY MANSION</h2>
+                <li>Consists of 3 Rounds</li>
+                <li>1st Round is Screening Test.</li>
+                <li>2nd Round :Teams are formed and they have to search for treasures.</li>
+                <li>3rd Round : Investigation, you have to investigate the case with in the given time.</li>
+                <li>Contact: 9390086608</li>
+                <button type="button" class="btn cancel" onclick="closeForm('popup-id8')">Close</button>
+            </div>
+
+
+
+            <div class="card Manage filterDiv" id="iplAuction">
+                <div class="cardImg">
+                    <img src="./assets/images/events/iplauctionfinalrgbs.jpg" alt="Img">
+                </div><br>
+                <div class="event-content">
+                    <h5>IPL AUCTION</h5>
+                    <h6>Fee: 60/-</h6>
+                    <hr>
+                    <button class="descBtn open-button" onclick="openForm('popup-id9')">Description</button>
+                    <a target="_blank" href="register_form.html" class="regBtn">Register</a>
+                </div>
+            </div>
+            <div class="popup-card" id="popup-id9">
+                <h2>IPL AUCTION</h2>
+                <li>Need to Update!</li>
+                <li>Contact: 9849217224</li>
+                <button type="button" class="btn cancel" onclick="closeForm('popup-id9')">Close</button>
+            </div>
+
+
+
+            <div class="card Manage filterDiv" id="uniqus">
+                <div class="cardImg">
+                    <img src="./assets/images/events/uniqusFINALRGB.jpg" alt="Img">
+                </div><br>
+                <div class="event-content">
+                    <h5>UNIQUS</h5>
+                    <h6>Fee: 60/-</h6>
+                    <hr>
+                    <button class="descBtn open-button" onclick="openForm('popup-id10')">Description</button>
+                    <a target="_blank" href="register_form.html" class="regBtn">Register</a>
+                </div>
+            </div>
+            <div class="popup-card" id="popup-id10">
+                <h2>UNIQUS</h2>
+
+                <li>This event consists of total 4 Rounds.</li>
+                <li>1st Round : Screening Test where you will be given with set of questions.</li>
+                <li>2nd and 3rd Rounds : different ppts will be displayed and you need to present in your unique way.
+                </li>
+                <li>4th Round : It's a Special Round revealed only on the day of event.</li>
+                <li>Final winner will be selected by panel of judges only.</li>
+                <li>Contact: 7989182841</li>
+                <button type="button" class="btn cancel" onclick="closeForm('popup-id10')">Close</button>
+            </div>
+
+
+
+            <div class="card Present filterDiv" id="posterArena">
+                <div class="cardImg">
+                    <img src="./assets/images/events/posterarenargbs.jpg" alt="Img">
+                </div><br>
+                <div class="event-content">
+                    <h5>POSTER ARENA</h5>
+                    <h6>Fee: 60/-</h6>
+                    <hr>
+                    <button class="descBtn open-button" onclick="openForm('popup-id11')">Description</button>
+                    <a target="_blank" href="register_form.html" class="regBtn">Register</a>
+                </div>
+            </div>
+            <div class="popup-card" id="popup-id11">
+                <h2>POSTER ARENA</h2>
+                <p>This event is open for all the branch people. </p>
+                <li>Contact: 9908890439, 7989171863</li>
+                <button type="button" class="btn cancel" onclick="closeForm('popup-id11')">Close</button>
+            </div>
+
+
+
+            <div class="card Present filterDiv" id="presencia">
+                <div class="cardImg">
+                    <img src="./assets/images/events/PRESENCIARGBFINAL.jpg" alt="Img">
+                </div><br>
+                <div class="event-content">
+                    <h5>PRESENCIA</h5>
+                    <h6>Fee: 60/-</h6>
+                    <hr>
+                    <button class="descBtn open-button" onclick="openForm('popup-id12')">Description</button>
+                    <a target="_blank" href="register_form.html" class="regBtn">Register</a>
+                </div>
+            </div>
+            <div class="popup-card" id="popup-id12">
+                <h2>PRESENCIA</h2>
+                RULES
+
+                1. A team should consist of a maximum of 2 members.
+                2. Submission of Abstract should follow the IEEE standard format with not more than 300 words.
+                3. Only participants who qualify in preliminary abstract submission will be eligible for presentation.
+                4. The presentation should last a maximum of 8 minutes. There will be a questionnaire session followed by for 2 minutes
+                5. Ppt should be sent to the respective Mail ids provided below.
+                ECE&EEE : nipuna24eceeeeppt@gmail.com
+                MECHANICAL : nipuna24mechppt@gmail.com
+                CIVIL : nipuna24civilppt@gmail.com
+                CSE : nipuna24cseppt@gmail.com
+                IT : nipuna24itppt@gmail.com
+                MISC : nipuna24miscppt@gmail.com
+                
+                IEEE RULES
+                
+                1. All manuscripts must be in English
+                2. Normal text is to be single-spaced in 10-point Times or Times Roman with 12-point interline spacing, in the two-column format.
+                3. The entire text is to be justified.
+                4. The number of slides should not exceed 12.
+                5. One should only participate in any one of the domains/segments of Presencia.
+                
+                FOR ANY QUERRIES : 
+                Contact 
+                ECE : Ch. Udaya - 9515745345, A. Ratan Pavan - 9182925243, P. Ganesh - 9573277952
+                EEE :Ch. Udaya - 9515745345, A. Ratan Pavan - 9182925243, P. Ganesh - 9573277952
+                IT : Ch. Udaya - 9515745345
+                CSE : Ch. Udaya - 9515745345
+                MECH : A. Ratan Pavan - 9182925243
+                CIVIL : P. Ganesh - 9573277952
+                MISC : P. Ganesh - 9573277952
+                <button type="button" class="btn cancel" onclick="closeForm('popup-id12')">Close</button>
+            </div>
+
+
+
+            <div class="card Present filterDiv" id="modelMarathon">
+                <div class="cardImg">
+                    <img src="./assets/images/events/MODELMARATHONFINALRGB.jpg" alt="Img">
+                </div><br>
+                <div class="event-content">
+                    <h5>MODEL MARATHON</h5>
+                    <h6>Fee: 60/-</h6>
+                    <hr>
+                    <button class="descBtn open-button" onclick="openForm('popup-id13')">Description</button>
+                    <a target="_blank" href="register_form.html" class="regBtn">Register</a>
+                </div>
+            </div>
+            <div class="popup-card" id="popup-id13">
+                <h2>MODEL MARATHON</h2>
+                <p>This event is open for all the branch people. </p>
+                <li>Contact: 9908890439, 9490144228</li>
+                <button type="button" class="btn cancel" onclick="closeForm('popup-id13')">Close</button>
+            </div>
+
+
+
+            <div class="card Present filterDiv" id="modelUnitedNations">
+                <div class="cardImg">
+                    <img src="./assets/images/events/mun.heic" alt="Img">
+                </div><br>
+                <div class="event-content">
+                    <h5>MODEL UNITED NATIONS</h5>
+                    <h6>Fee: 60/-</h6>
+                    <hr>
+                    <button class="descBtn open-button" onclick="openForm('popup-id14')">Description</button>
+                    <a target="_blank" href="register_form.html" class="regBtn">Register</a>
+                </div>
+            </div>
+            <div class="popup-card" id="popup-id14">
+                <h2>MODEL UNITED NATIONS</h2>
+                <li>Participants qualified will be referred as delegates and will pay the role of a country's
+                    representative</li>
+                <li>Do a keen research on the topic and the country you were alloted to.</li>
+                <li>Follow the rules for the procedure of debates, resolutions, amendments etc made during the
+                    conference.</li>
+                <li>Final winner will be selected by panel of judges only.</li>
+                <li>Contact: 9666631189,9866363766</li>
+                <button type="button" class="btn cancel" onclick="closeForm('popup-id14')">Close</button>
+            </div>
+
+
+
+            <div class="card lit filterDiv" id="wordSphere">
+                <div class="cardImg">
+                    <img src="./assets/images/events/wordspherefinalRGBS.jpg" alt="Img">
+                </div><br>
+                <div class="event-content">
+                    <h5>WORD SPHERE</h5>
+                    <h6>Fee: 60/-</h6>
+                    <hr>
+                    <button class="descBtn open-button" onclick="openForm('popup-id15')">Description</button>
+                    <a target="_blank" href="register_form.html" class="regBtn">Register</a>
+                </div>
+            </div>
+            <div class="popup-card" id="popup-id15">
+                <h2>WORD SPHERE</h2>
+                <li>In this event the participants will be tested on their grammatical skills.</li>
+                <li>This event totally consists of 3 Rounds</li>
+                <li>1st round will be screening test</li>
+                <li>2nd round consists of some MCQ's.</li>
+                <li>Based on cutoff you will be moved into Finalround.</li>
+                <li>Contact: 7989171863</li>
+                <button type="button" class="btn cancel" onclick="closeForm('popup-id15')">Close</button>
+            </div>
+
+
+
+            <div class="card Art filterDiv" id="clickOMania">
+                <div class="cardImg">
+                    <img src="./assets/images/events/com.jpg" alt="Img">
+                </div><br>
+                <div class="event-content">
+                    <h5>CLICK O MANIA</h5>
+                    <h6>Fee: 60/-</h6>
+                    <hr>
+                    <button class="descBtn open-button" onclick="openForm('popup-id16')">Description</button>
+                    <a target="_blank" href="register_form.html" class="regBtn">Register</a>
+                </div>
+            </div>
+            <div class="popup-card" id="popup-id16">
+                <h2>CLICK O MANIA</h2>
+                <li>Complete Details of yours is compulsory.</li>
+                <li>Picture should be submitted in JPEG Format and should have good resolution.</li>
+                <li>Picture editing should be done through basic android apps only!</li>
+                <li>Each Participant can submit upto 10 entries</li>
+                <li>Usage of any automatic liking apps are strictly prohibited.</li>
+                <li>Contact: 9640748058</li>
+                <button type="button" class="btn cancel" onclick="closeForm('popup-id16')">Close</button>
+            </div>
+
+
+
+            <div class="card Art filterDiv" id="artSpace">
+                <div class="cardImg">
+                    <img src="./assets/images/events/artspacefinalrgbs.jpg" alt="Img">
+                </div><br>
+                <div class="event-content">
+                    <h5>ART-SPACE</h5>
+                    <h6>Fee: 60/-</h6>
+                    <hr>
+                    <button class="descBtn open-button" onclick="openForm('popup-id17')">Description</button>
+                    <a target="_blank" href="register_form.html" class="regBtn">Register</a>
+                </div>
+            </div>
+            <div class="popup-card" id="popup-id17">
+                <h2>ART-SPACE</h2>
+                <li>Consisting 2 streams : Art Gallery and SPOT painting.</li>
+                <li>ART Gallery : you can exhibit your previous paintings</li>
+                <li>SPOT painting : you can draw your ideas with the provided stationary.</li>
+                <li>No plagarisms will be encouraged. </li>
+                <li>Contact: 7981963421,9346597735</li>
+                <button type="button" class="btn cancel" onclick="closeForm('popup-id17')">Close</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Start Footer Area -->
+    <footer class="footer" style="margin-top: 0px;">
+        <!-- Start Footer Top -->
+        <div class="footer-top">
+            <div class="container">
+                <div class="inner-content">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-6 mt-3">
+                            <!-- Single Widget -->
+                            <div class="single-footer f-link">
+                                <h3>Venue Location</h3>
+                                <div class="textwidget">
+                                    <p><span><i class="fas fa-calendar-alt"></i>21-22 February , 2025</span></p>
+                                    <p><i class="fas fa-map-marker-alt"></i>W block - 201 , S.R.K.R Engineering College</p>
+                                    <p> <i class="fas fa-phone"></i></i>Contact Us</a></p>
+                                </div>
+                            </div>
+                            <!-- End Single Widget -->
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 col-6">
+                            <!-- Single Widget -->
+                            <div class="single-footer f-about">
+                                <h3>Social Connection</h3>
+                                <p>Don't miss a thing! Receive daily news. You should connect social area
+                                    for proper updates anytime.</p>
+                                <span class="social-title">
+                                    Follow Us On:
+                                </span>
+                                <ul class="social">
+                                    <li>
+                                        <a href="https://www.facebook.com/SrkrIste?mibextid=ZbWKwL"><i class="fa fa-facebook"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="https://youtube.com/@srkriste1995?si=FJIk6QGKYsTnTDND"><i class="fa fa-youtube"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="https://instagram.com/srkriste?igshid=OGQ5ZDc2ODk2ZA=="><i class="fa fa-instagram"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.linkedin.com/company/srkriste/"><i class="fa fa-linkedin"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- End Single Widget -->
+                        </div>
+                        <!-- <div class="col-lg-2 col-md-6 col-12">
+                            <div class="single-footer f-link">
+                                <h3>Quick Links</h3>
+                                <ul>
+                                    <li><a href="javascript:void(0)">Get Direction</a></li>
+                                    <li><a href="javascript:void(0)">Sponsor</a></li>
+                                    <li><a href="javascript:void(0)">What We Offer</a></li>
+                                    <li><a href="javascript:void(0)">Ricent Projects</a></li>
+                                    <li><a href="javascript:void(0)">Insights</a></li>
+                                </ul>
+                            </div>
+                        </div> -->
+                        
+                        <!-- <div class="col-lg-4 col-md-6 col-12">
+                            <div class="single-footer newsletter">
+                                <h3>Subscribe to our newsletter</h3>
+                                <form action="#" method="get" target="_blank" class="newsletter-form">
+                                    <input name="name" placeholder="Your Name*" required="required" type="text">
+                                    <input name="email" placeholder="Email address*" required="required" type="email">
+                                    <div class="button">
+                                        <button class="btn">Subscribe
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/ End Footer Top -->
+        <!-- Start Copyright Area -->
+        <div class="copyright">
+            <div class="container">
+                <div class="inner-content">
+                    <div class="row">
+                        <div class="col-12">
+                            <p class="copyright-text">2025, Nipuna. All rights reserved.</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Copyright Area -->
+    </footer>
+    <!--/ End Footer Area -->
+
+    <!-- ========================= scroll-top ========================= -->
+    <a href="#" class="scroll-top">
+        <i class="lni lni-chevron-up"></i>
+    </a>
+
+    <!-- ========================= JS here ========================= -->
+     
+    <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            var c = document.body.className;
+            c = c.replace(/woocommerce-no-js/, 'woocommerce-js');
+            document.body.className = c;
+        })();
+    </script>
+    <script src='../wp-content/plugins/contact-form-7/includes/swv/js/index.js?ver=5.8' id='swv-js'></script>
+    <script id='contact-form-7-js-extra'>
+        /* <![CDATA[ */
+        var wpcf7 = { "api": { "root": "https:\/\/themes.envytheme.com\/encontro\/wp-json\/", "namespace": "contact-form-7\/v1" } };
+        /* ]]> */
+    </script>
+    <script src='../wp-content/plugins/contact-form-7/includes/js/index.js?ver=5.8' id='contact-form-7-js'></script>
+    <script src='../wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js?ver=2.1.4-wc.8.1.1'
+        id='js-cookie-js'></script>
+    <script id='woocommerce-js-extra'>
+        /* <![CDATA[ */
+        var woocommerce_params = { "ajax_url": "\/encontro\/wp-admin\/admin-ajax.php", "wc_ajax_url": "\/encontro\/?wc-ajax=%%endpoint%%" };
+        /* ]]> */
+    </script>
+    <script src='../wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?ver=8.1.1'
+        id='woocommerce-js'></script>
+    <script src='../wp-content/plugins/js_composer/assets/js/dist/js_composer_front.min.js?ver=6.11.0'
+        id='wpb_composer_front_js-js'>
+
+
+        </script>
+
+    <script>
+
+        filterSelection("all")
+        function filterSelection(className) {
+            var elements = document.getElementsByClassName("filterDiv");
+            if (className == "all") {
+                for (var i = 0; i < elements.length; i++) {
+                    elements[i].style.display = "block";
+                }
+            } else {
+                for (var i = 0; i < elements.length; i++) {
+                    elements[i].style.display = "none";
+                }
+
+                var filteredElements = document.getElementsByClassName(className);
+                for (var i = 0; i < filteredElements.length; i++) {
+                    filteredElements[i].style.display = "block";
+                }
+            }
+        }
+
+        // Add active class to the current button (highlight it)
+        var btnContainer = document.getElementById("myBtnContainer");
+        var btns = btnContainer.getElementsByClassName("event-btn");
+        var mybtn;
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].addEventListener("click", function () {
+                var elements = document.getElementsByClassName("event-btn");
+                for (var i = 0; i < elements.length; i++) {
+                    elements[i].style.backgroundColor = "#eef2eb";
+                }
+                this.style.backgroundColor = "#21d185";
+            });
+
+        }
+
+
+        function search() {
+            var input = document.getElementById('myInput').value;
+            input = input.toLowerCase();
+            let y = document.getElementsByClassName('item');
+            var x = document.getElementById('demo');
+            var z = 1;
+            for (i = 0; i < y.length; i++) {
+                x.style.display = "none";
+                if (!y[i].innerHTML.toLowerCase().includes(input)) {
+                    y[i].style.display = "none";
+                    z = z + 1;
+                } else {
+                    y[i].style.display = "list-item";
+                    document.getElementById('list').style.display = "list-item";
+                }
+            }
+            if (z > y.length) {
+                x.style.display = "block";
+            }
+            if (!input) {
+                document.getElementById('list').style.display = 'none';
+            }
+
+        }
+
+
+
+        function openForm(p1) {
+            document.getElementById(p1).style.display = "block";
+        }
+
+        function closeForm(p2) {
+            document.getElementById(p2).style.display = "none";
+        }
+
+
+    </script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/tiny-slider.js"></script>
+    <script src="assets/js/glightbox.min.js"></script>
+    <script src="assets/js/count-up.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
