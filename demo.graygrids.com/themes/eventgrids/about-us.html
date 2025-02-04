@@ -276,7 +276,7 @@
                 <div class="col-lg-3 col-md-6 col-3">
                     <div class="single-achievement wow fadeInUp" data-wow-delay=".2s">
                         <h3 class="counter">
-                            <span id="secondo2" class="countup" cup-end="43">43</span>
+                            <span id="secondo2" class="countup" cup-end="43">41</span>
                         </h3>
                         <p>OUR TEAM</p>
                     </div>
@@ -333,6 +333,12 @@
             font-size: 1.2rem;
             }
 
+            @media(max-width: 768px) {
+                .h4{
+                    font-size: 1rem;
+                }
+            }
+
             h2 {
             color: #333;
             }
@@ -386,7 +392,7 @@
                     </h2>
                     <div class="position-absolute top-0 right-0 h-100 d-flex align-items-center">
                         <img src="./assets/images/icon-minus.svg" alt="icon-minus" class="icon" id="icon-minus-2">
-                <img src="./assets/images/icon-plus.svg" alt="icon-plus" class="icon" id="icon-plus-2">
+                        <img src="./assets/images/icon-plus.svg" alt="icon-plus" class="icon" id="icon-plus-2">
                     </div>
                     
                     </div>
@@ -582,8 +588,10 @@
                             <div class="single-footer f-link">
                                 <h3>Venue Location</h3>
                                 <div class="textwidget">
-                                    <p><span><i class="fas fa-calendar-alt"></i>21-22 February , 2025</span></p>
-                                    <p><i class="fas fa-map-marker-alt"></i>W block - 201 , S.R.K.R Engineering College</p>
+                                    <p class="d-none d-md-block"><span><i class="fas fa-calendar-alt"></i>21-22 February , 2025</span></p>
+                                    <p class="d-md-none"><span><i class="fas fa-calendar-alt"></i>21 - 22 Feb</span></p>
+                                    <p class="d-none d-md-block"><i class="fas fa-map-marker-alt"></i>W block - 201 , S.R.K.R Engineering College</p>
+                                    <p class="d-md-none"><i class="fas fa-map-marker-alt ml-0"></i>W block-201 <br> S.R.K.R College</p>
                                     <p> <i class="fas fa-phone"></i></i>Contact Us</a></p>
                                 </div>
                             </div>
@@ -594,12 +602,13 @@
                             <!-- Single Widget -->
                             <div class="single-footer f-about">
                                 <h3>Social Connection</h3>
-                                <p>Don't miss a thing! Receive daily news. You should connect social area
+                                <p class="d-none d-md-block">Don't miss a thing! Receive daily news. You should connect social area
                                     for proper updates anytime.</p>
-                                <span class="social-title">
+                                <p class="d-md-none">Don't miss a thing! Receive daily updates by following our social media handles.</p>
+                                <span class="social-title d-none d-md-block">
                                     Follow Us On:
                                 </span>
-                                <ul class="social">
+                                <ul class="social d-none d-md-block">
                                     <li>
                                         <a href="https://www.facebook.com/SrkrIste?mibextid=ZbWKwL"><i class="fa fa-facebook"></i></a>
                                     </li>
@@ -616,32 +625,30 @@
                             </div>
                             <!-- End Single Widget -->
                         </div>
-                        <!-- <div class="col-lg-2 col-md-6 col-12">
-                            <div class="single-footer f-link">
-                                <h3>Quick Links</h3>
-                                <ul>
-                                    <li><a href="javascript:void(0)">Get Direction</a></li>
-                                    <li><a href="javascript:void(0)">Sponsor</a></li>
-                                    <li><a href="javascript:void(0)">What We Offer</a></li>
-                                    <li><a href="javascript:void(0)">Ricent Projects</a></li>
-                                    <li><a href="javascript:void(0)">Insights</a></li>
+                        <div class="d-flex flex-column justify-content-center d-md-none">
+                            <div class="d-flex flex-row justify-content-center">
+                                <span class="social-title">
+                                    Follow Us On:
+                                </span>
+                            </div>
+                            <div class="single-footer f-about" style="margin-top: 10px;">
+                                <ul class="social">
+                                    <li>
+                                        <a href="https://www.facebook.com/SrkrIste?mibextid=ZbWKwL"><i class="fab fa-facebook-f"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="https://youtube.com/@srkriste1995?si=FJIk6QGKYsTnTDND"><i class="fab fa-youtube"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="https://instagram.com/srkriste?igshid=OGQ5ZDc2ODk2ZA=="><i class="fab fa-instagram"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.linkedin.com/company/srkriste/"><i class="fab fa-linkedin-in"></i></a>
+                                    </li>
                                 </ul>
                             </div>
-                        </div> -->
-                        
-                        <!-- <div class="col-lg-4 col-md-6 col-12">
-                            <div class="single-footer newsletter">
-                                <h3>Subscribe to our newsletter</h3>
-                                <form action="#" method="get" target="_blank" class="newsletter-form">
-                                    <input name="name" placeholder="Your Name*" required="required" type="text">
-                                    <input name="email" placeholder="Email address*" required="required" type="email">
-                                    <div class="button">
-                                        <button class="btn">Subscribe
-                                        </button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div> -->
+                            
+                        </div>
                     </div>
                 </div>
             </div>

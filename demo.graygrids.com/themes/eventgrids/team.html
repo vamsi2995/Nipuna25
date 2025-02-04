@@ -80,7 +80,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" crossorigin="anonymous"></script>
     <style>
 
-        .container {
+        .container1 {
             max-width: 1400px;
             text-align: center;
         }
@@ -125,8 +125,20 @@
             }
         }
         @media (max-width: 480px) {
+            .card{
+                padding: 10px;
+                width: 150px;
+                
+            }
+            .card img {
+                width: 80px;
+                height: 80px;
+            }
+            .card p {
+                font-size: 12px;
+            }
             .grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(2, 1fr);
             }
         }
     </style>
@@ -154,7 +166,7 @@
 
     <!-- Start Header Area -->
     <header class="header navbar-area">
-        <div class="container">
+        <div class="container container1">
             <div class="row align-items-center">
                 <div class="col-lg-12">
                     <div class="nav-inner">
@@ -204,7 +216,7 @@
 
     <!-- Start Breadcrumbs -->
     <div class="breadcrumbs">
-        <div class="container">
+        <div class="container container1">
             <div class="row align-items-center">
                 <div class="col-lg-8 offset-lg-2 col-md-12 col-12">
                     <div class="breadcrumbs-content">
@@ -225,7 +237,7 @@
 
 <!-- Start Speakers Area -->
     <section class="speakers section">
-        <div class="container">
+        <div class="container container1">
             <div class="division">
                 <h3 style="margin-bottom: 50px;">SENIOR BODY MEMBERS</h3>
                 <div class="grid">
@@ -439,7 +451,7 @@
                 </div>
             </div>
         </div>
-        <div class="container">
+        <div class="container container1">
             <div class="division">
                 <h3 style="margin-top: 50px;margin-bottom: 50px;">EXECUTIVE BODY MEMBERS</h3>
                 <div class="grid">
@@ -716,18 +728,20 @@
     <!-- Start Footer Area -->
     <footer class="footer">
         <!-- Start Footer Top -->
-        <div class="footer-top">
+        <div class="footer-top" style="padding-top: 20px;">
             <div class="container">
                 <div class="inner-content">
                     <div class="row">
-                        <div class="col-lg-6 col-md-6 col-6 mt-3">
+                        <div class="col-lg-6 col-md-6 col-6">
                             <!-- Single Widget -->
                             <div class="single-footer f-link">
                                 <h3>Venue Location</h3>
                                 <div class="textwidget">
-                                    <p><span><i class="fas fa-calendar-alt"></i>21-22 February , 2025</span></p>
-                                    <p><i class="fas fa-map-marker-alt"></i>W block - 201 , S.R.K.R Engineering College</p>
-                                    <p> <i class="fas fa-phone"></i></i>Contact Us</a></p>
+                                    <p class="d-none d-md-block"><span><i class="fas fa-calendar-alt" style="margin-right: 10px;"></i>21-22 February , 2025</span></p>
+                                    <p class="d-md-none"><span><i class="fas fa-calendar-alt" style="margin-right: 10px;"></i>21 - 22 Feb</span></p>
+                                    <p class="d-none d-md-block"><i class="fas fa-map-marker-alt" style="margin-right: 10px;"></i>W block - 201 , S.R.K.R Engineering College</p>
+                                    <p class="d-md-none"><i class="fas fa-map-marker-alt ml-0"></i>W block-201 <br> S.R.K.R College</p>
+                                    <p> <i class="fas fa-phone" style="margin-right: 10px;"></i></i>Contact Us</a></p>
                                 </div>
                             </div>
                             <!-- End Single Widget -->
@@ -736,55 +750,54 @@
                         <div class="col-lg-6 col-md-6 col-6">
                             <!-- Single Widget -->
                             <div class="single-footer f-about">
-                                <h3>Social Connection</h3>
-                                <p>Don't miss a thing! Receive daily news. You should connect social area
+                                <h3 style="margin-top: 15px;">Social Connection</h3>
+                                <p class="d-none d-md-block">Don't miss a thing! Receive daily news. You should connect social area
                                     for proper updates anytime.</p>
-                                <span class="social-title">
+                                <p class="d-md-none">Don't miss a thing! Receive daily updates by following our social media handles.</p>
+                                <span class="social-title d-none d-md-block">
                                     Follow Us On:
                                 </span>
-                                <ul class="social">
+                                <ul class="social d-none d-md-block">
                                     <li>
-                                        <a href="https://www.facebook.com/SrkrIste?mibextid=ZbWKwL"><i class="fa fa-facebook"></i></a>
+                                        <a href="https://www.facebook.com/SrkrIste?mibextid=ZbWKwL"><i class="fab fa-facebook-f"></i></a>
                                     </li>
                                     <li>
-                                        <a href="https://youtube.com/@srkriste1995?si=FJIk6QGKYsTnTDND"><i class="fa fa-youtube"></i></a>
+                                        <a href="https://youtube.com/@srkriste1995?si=FJIk6QGKYsTnTDND"><i class="fab fa-youtube"></i></a>
                                     </li>
                                     <li>
-                                        <a href="https://instagram.com/srkriste?igshid=OGQ5ZDc2ODk2ZA=="><i class="fa fa-instagram"></i></a>
+                                        <a href="https://instagram.com/srkriste?igshid=OGQ5ZDc2ODk2ZA=="><i class="fab fa-instagram"></i></a>
                                     </li>
                                     <li>
-                                        <a href="https://www.linkedin.com/company/srkriste/"><i class="fa fa-linkedin"></i></a>
+                                        <a href="https://www.linkedin.com/company/srkriste/"><i class="fab fa-linkedin-in"></i></a>
                                     </li>
                                 </ul>
                             </div>
                             <!-- End Single Widget -->
                         </div>
-                        <!-- <div class="col-lg-2 col-md-6 col-12">
-                            <div class="single-footer f-link">
-                                <h3>Quick Links</h3>
-                                <ul>
-                                    <li><a href="javascript:void(0)">Get Direction</a></li>
-                                    <li><a href="javascript:void(0)">Sponsor</a></li>
-                                    <li><a href="javascript:void(0)">What We Offer</a></li>
-                                    <li><a href="javascript:void(0)">Ricent Projects</a></li>
-                                    <li><a href="javascript:void(0)">Insights</a></li>
+                        <div class="d-flex flex-column justify-content-center d-md-none">
+                            <div class="d-flex flex-row justify-content-center">
+                                <span class="social-title">
+                                    Follow Us On:
+                                </span>
+                            </div>
+                            <div class="single-footer f-about" style="margin-top: 10px;">
+                                <ul class="social">
+                                    <li>
+                                        <a href="https://www.facebook.com/SrkrIste?mibextid=ZbWKwL"><i class="fab fa-facebook-f"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="https://youtube.com/@srkriste1995?si=FJIk6QGKYsTnTDND"><i class="fab fa-youtube"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="https://instagram.com/srkriste?igshid=OGQ5ZDc2ODk2ZA=="><i class="fab fa-instagram"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.linkedin.com/company/srkriste/"><i class="fab fa-linkedin-in"></i></a>
+                                    </li>
                                 </ul>
                             </div>
-                        </div> -->
-                        
-                        <!-- <div class="col-lg-4 col-md-6 col-12">
-                            <div class="single-footer newsletter">
-                                <h3>Subscribe to our newsletter</h3>
-                                <form action="#" method="get" target="_blank" class="newsletter-form">
-                                    <input name="name" placeholder="Your Name*" required="required" type="text">
-                                    <input name="email" placeholder="Email address*" required="required" type="email">
-                                    <div class="button">
-                                        <button class="btn">Subscribe
-                                        </button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div> -->
+                            
+                        </div>
                     </div>
                 </div>
             </div>

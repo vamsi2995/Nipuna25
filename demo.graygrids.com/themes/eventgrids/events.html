@@ -60,6 +60,7 @@
 
         #list {
             position: absolute;
+            left: 74%;
             right: 14%;
             top: 70%;
             list-style: none;
@@ -92,12 +93,12 @@
         }
 
         .event-content {
-            padding: 1rem;
+            padding: 0.1rem;
         }
 
         .cardImg img {
-            height: 300px;
-            width: 350px;
+            height: 250px;
+            width: 300px;
         }
 
         .cardImg:hover {
@@ -178,16 +179,36 @@
         }
 
         @media screen and (max-width:400px) {
+            .eventsPage .filter-btn{
+                
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;    
+                justify-content: flex-start;
+                /* align-items: flex-start; */
+                
+            }
             .cardImg {
                 height: 180px;
                 width: 270px;
                 object-fit: cover;
             }
 
+            .cardImg img{
+                height: 180px;
+                width: 180px;
+            }
+
             .event-content button {
                 font-size: 10px;
                 padding: 3px;
                 margin: 5px;
+            }
+
+            #list {
+                left: 27%;
+                right: 35%;
+                top: 125%;
             }
         }
 
@@ -241,7 +262,17 @@
                 height: 43px;
             }
 
+            .popup-card{
+                bottom: 15%;
+                font-size: 12px;
+            }
+
+            .popup-card h2{
+                font-size: 18px;
+            }
+
             .popup-card .btn {
+                width: 50px;
                 padding: 10px;
                 font-size: 8px;
             }
@@ -398,7 +429,7 @@
             <div class="popup-card" id="popup-id1">
                     <h2>CODE COMBAT</h2>
                     <li>The participants should register individually.</li>
-                    <li>Each person will allowed to use single pc only.</li>
+                    <li class="d-none d-md-block">Each person will allowed to use single pc only.</li>
                     <li>Each participant should submit a single solution to each problem.</li>
                     <li>It consists of 2 categories. Programing and Web designing.</li>
                     <li>Final winner will be selected by panel of judges only.</li>
@@ -422,10 +453,10 @@
             </div>
             <div class="popup-card" id="popup-id2">
                 <h2>MECHONICA</h2>
-                <li>It includes 3 Rounds</li>
+                <li class="d-none d-md-block">It includes 3 Rounds</li>
                 <li>1st Round consists of theory and problematic questions based on mechanical Engineering.</li>
                 <li>2nd Round : Name the unknown parts and explain its working.</li>
-                <li>3rd Round : In this round, one diagarm will be shown on the projector, and they have to draw on
+                <li>3rd Round : One diagarm will be shown on the projector, and they have to draw on
                     CAM/CAD/CATIA in a specific time.</li>
                 <li>Contact: 9573277952</li>
                 <button type="button" class="btn cancel" onclick="closeForm('popup-id2')">Close</button>
@@ -494,7 +525,7 @@
             </div>
             <div class="popup-card" id="popup-id5">
                 <h2>BUSINESS CAPITAL</h2>
-                <li>In this event you will be having 2 rounds.</li>
+                <li class="d-none d-md-block">In this event you will be having 2 rounds.</li>
                 <li>1st Round consists of problems related to basic maths.</li>
                 <li>2nd Round : QUalified persons will be divided into 2 groups i.Stocks ii.Tenders</li>
                 <li>judgement criteria is based on the optimal usage of money.</li>
@@ -517,8 +548,8 @@
                 </div>
             </div>
             <div class="popup-card" id="popup-id6">
-                <h2>MIND-QUEST</h2>
-                <li>In this event you will be having 3 rounds</li>
+                <h2 class="d-none d-md-block">MIND-QUEST</h2>
+                <li class="d-none d-md-block">In this event you will be having 3 rounds</li>
                 <li>1st round consists of logical questions, tricks, puzzles</li>
                 <li>2nd round: qualified persons should solve some logical questions, tricks, puzzles</li>
                 <li>3rd round: 1 vs 1 there will be some rules following those they should answer some questions. </li>
@@ -606,9 +637,9 @@
                 </div>
             </div>
             <div class="popup-card" id="popup-id10">
-                <h2>UNIQUS</h2>
+                <h2 class="d-none d-md-block">UNIQUS</h2>
 
-                <li>This event consists of total 4 Rounds.</li>
+                <li class="d-none d-md-block">This event consists of total 4 Rounds.</li>
                 <li>1st Round : Screening Test where you will be given with set of questions.</li>
                 <li>2nd and 3rd Rounds : different ppts will be displayed and you need to present in your unique way.
                 </li>
@@ -679,13 +710,10 @@
                 
                 FOR ANY QUERRIES : 
                 Contact 
-                ECE : Ch. Udaya - 9515745345, A. Ratan Pavan - 9182925243, P. Ganesh - 9573277952
-                EEE :Ch. Udaya - 9515745345, A. Ratan Pavan - 9182925243, P. Ganesh - 9573277952
-                IT : Ch. Udaya - 9515745345
-                CSE : Ch. Udaya - 9515745345
-                MECH : A. Ratan Pavan - 9182925243
-                CIVIL : P. Ganesh - 9573277952
-                MISC : P. Ganesh - 9573277952
+                CSE, IT : L.Mounika - 8309965388
+                ECE, EEE : P.Harsha - 9849105962
+                MECH : M.Vasu deva rao - 7569177485
+                CIVIL, MISC : B. Monika - 7815938631
                 <button type="button" class="btn cancel" onclick="closeForm('popup-id12')">Close</button>
             </div>
 
@@ -725,7 +753,7 @@
                 </div>
             </div>
             <div class="popup-card" id="popup-id14">
-                <h2>MODEL UNITED NATIONS</h2>
+                <h2 class="d-none d-md-block">MODEL UNITED NATIONS</h2>
                 <li>Participants qualified will be referred as delegates and will pay the role of a country's
                     representative</li>
                 <li>Do a keen research on the topic and the country you were alloted to.</li>
@@ -776,13 +804,13 @@
                 </div>
             </div>
             <div class="popup-card" id="popup-id16">
-                <h2>CLICK O MANIA</h2>
+                <h2 class="d-none d-md-block">CLICK O MANIA</h2>
                 <li>Complete Details of yours is compulsory.</li>
                 <li>Picture should be submitted in JPEG Format and should have good resolution.</li>
                 <li>Picture editing should be done through basic android apps only!</li>
                 <li>Each Participant can submit upto 10 entries</li>
                 <li>Usage of any automatic liking apps are strictly prohibited.</li>
-                <li>Contact: 9640748058</li>
+                <li>Contact: 9849105962</li>
                 <button type="button" class="btn cancel" onclick="closeForm('popup-id16')">Close</button>
             </div>
 
@@ -813,7 +841,7 @@
     </div>
     
     <!-- Start Footer Area -->
-    <footer class="footer" style="margin-top: 0px;">
+    <footer class="footer">
         <!-- Start Footer Top -->
         <div class="footer-top">
             <div class="container">
@@ -824,8 +852,10 @@
                             <div class="single-footer f-link">
                                 <h3>Venue Location</h3>
                                 <div class="textwidget">
-                                    <p><span><i class="fas fa-calendar-alt"></i>21-22 February , 2025</span></p>
-                                    <p><i class="fas fa-map-marker-alt"></i>W block - 201 , S.R.K.R Engineering College</p>
+                                    <p class="d-none d-md-block"><span><i class="fas fa-calendar-alt"></i>21-22 February , 2025</span></p>
+                                    <p class="d-md-none"><span><i class="fas fa-calendar-alt"></i>21 - 22 Feb</span></p>
+                                    <p class="d-none d-md-block"><i class="fas fa-map-marker-alt"></i>W block - 201 , S.R.K.R Engineering College</p>
+                                    <p class="d-md-none"><i class="fas fa-map-marker-alt ml-0"></i>W block-201 <br> S.R.K.R College</p>
                                     <p> <i class="fas fa-phone"></i></i>Contact Us</a></p>
                                 </div>
                             </div>
@@ -836,12 +866,13 @@
                             <!-- Single Widget -->
                             <div class="single-footer f-about">
                                 <h3>Social Connection</h3>
-                                <p>Don't miss a thing! Receive daily news. You should connect social area
+                                <p class="d-none d-md-block">Don't miss a thing! Receive daily news. You should connect social area
                                     for proper updates anytime.</p>
-                                <span class="social-title">
+                                <p class="d-md-none">Don't miss a thing! Receive daily updates by following our social media handles.</p>
+                                <span class="social-title d-none d-md-block">
                                     Follow Us On:
                                 </span>
-                                <ul class="social">
+                                <ul class="social d-none d-md-block">
                                     <li>
                                         <a href="https://www.facebook.com/SrkrIste?mibextid=ZbWKwL"><i class="fa fa-facebook"></i></a>
                                     </li>
@@ -858,32 +889,30 @@
                             </div>
                             <!-- End Single Widget -->
                         </div>
-                        <!-- <div class="col-lg-2 col-md-6 col-12">
-                            <div class="single-footer f-link">
-                                <h3>Quick Links</h3>
-                                <ul>
-                                    <li><a href="javascript:void(0)">Get Direction</a></li>
-                                    <li><a href="javascript:void(0)">Sponsor</a></li>
-                                    <li><a href="javascript:void(0)">What We Offer</a></li>
-                                    <li><a href="javascript:void(0)">Ricent Projects</a></li>
-                                    <li><a href="javascript:void(0)">Insights</a></li>
+                        <div class="d-flex flex-column justify-content-center d-md-none">
+                            <div class="d-flex flex-row justify-content-center">
+                                <span class="social-title">
+                                    Follow Us On:
+                                </span>
+                            </div>
+                            <div class="single-footer f-about" style="margin-top: 10px;">
+                                <ul class="social">
+                                    <li>
+                                        <a href="https://www.facebook.com/SrkrIste?mibextid=ZbWKwL"><i class="fab fa-facebook-f"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="https://youtube.com/@srkriste1995?si=FJIk6QGKYsTnTDND"><i class="fab fa-youtube"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="https://instagram.com/srkriste?igshid=OGQ5ZDc2ODk2ZA=="><i class="fab fa-instagram"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.linkedin.com/company/srkriste/"><i class="fab fa-linkedin-in"></i></a>
+                                    </li>
                                 </ul>
                             </div>
-                        </div> -->
-                        
-                        <!-- <div class="col-lg-4 col-md-6 col-12">
-                            <div class="single-footer newsletter">
-                                <h3>Subscribe to our newsletter</h3>
-                                <form action="#" method="get" target="_blank" class="newsletter-form">
-                                    <input name="name" placeholder="Your Name*" required="required" type="text">
-                                    <input name="email" placeholder="Email address*" required="required" type="email">
-                                    <div class="button">
-                                        <button class="btn">Subscribe
-                                        </button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div> -->
+                            
+                        </div>
                     </div>
                 </div>
             </div>
