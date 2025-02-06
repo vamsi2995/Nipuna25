@@ -1010,29 +1010,26 @@
 
 
         function search() {
-            var input = document.getElementById('myInput').value;
-            input = input.toLowerCase();
-            let y = document.getElementsByClassName('item');
-            var x = document.getElementById('demo');
-            var z = 1;
-            for (i = 0; i < y.length; i++) {
-                x.style.display = "none";
-                if (!y[i].innerHTML.toLowerCase().includes(input)) {
-                    y[i].style.display = "none";
-                    z = z + 1;
+            var input = document.getElementById('myInput').value.toLowerCase();
+            let items = document.getElementsByClassName('item');
+            let list = document.getElementById('list');
+            let noResults = document.getElementById('demo');
+            let matchFound = false;
+
+            for (let i = 0; i < items.length; i++) {
+                let text = items[i].textContent.trim().toLowerCase();
+                if (text.startsWith(input)) {
+                    items[i].style.display = "list-item";
+                    matchFound = true;
                 } else {
-                    y[i].style.display = "list-item";
-                    document.getElementById('list').style.display = "list-item";
+                    items[i].style.display = "none";
                 }
             }
-            if (z > y.length) {
-                x.style.display = "block";
-            }
-            if (!input) {
-                document.getElementById('list').style.display = 'none';
-            }
-
+            noResults.style.display = matchFound ? "none" : "block";
+            list.style.display = input ? "block" : "none";
         }
+
+
 
 
 
