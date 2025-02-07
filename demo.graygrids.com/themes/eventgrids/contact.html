@@ -50,6 +50,26 @@
     </div>
     <!-- /End Preloader -->
 
+    <style>
+        .navbar-nav .nav-item a::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: -3px;
+            width: 0;
+            height: 2px;
+            background: white;
+            transition: all 0.3s ease-in-out;
+            transform: translateX(-50%);
+        }
+        .navbar-nav .nav-item a:hover {
+            color: #f1c40f;
+        }
+        .navbar-nav .nav-item a:hover::after {
+            width: 100%;
+        }
+    </style>
+
     <!-- Start Header Area -->
     <header class="header navbar-area">
         <div class="container">
@@ -133,7 +153,7 @@
                             </div>
                             <div class="contact-widget-block">
                                 <h3 class="title">Call us</h3>
-                                <p>(+91)8309965388</p>
+                                <p>(+91) 8309965388</p>
                             </div>
                             <div class="contact-widget-block">
                                 <h3 class="title">Email us</h3>
@@ -230,16 +250,16 @@
                                 </span>
                                 <ul class="social d-none d-md-block">
                                     <li>
-                                        <a href="https://www.facebook.com/SrkrIste?mibextid=ZbWKwL"><i class="fa fa-facebook"></i></a>
+                                        <a href="https://www.facebook.com/SrkrIste?mibextid=ZbWKwL"><i class="fab fa-facebook-f"></i></a>
                                     </li>
                                     <li>
-                                        <a href="https://youtube.com/@srkriste1995?si=FJIk6QGKYsTnTDND"><i class="fa fa-youtube"></i></a>
+                                        <a href="https://youtube.com/@srkriste1995?si=FJIk6QGKYsTnTDND"><i class="fab fa-youtube"></i></a>
                                     </li>
                                     <li>
-                                        <a href="https://instagram.com/srkriste?igshid=OGQ5ZDc2ODk2ZA=="><i class="fa fa-instagram"></i></a>
+                                        <a href="https://instagram.com/srkriste?igshid=OGQ5ZDc2ODk2ZA=="><i class="fab fa-instagram"></i></a>
                                     </li>
                                     <li>
-                                        <a href="https://www.linkedin.com/company/srkriste/"><i class="fa fa-linkedin"></i></a>
+                                        <a href="https://www.linkedin.com/company/srkriste/"><i class="fab fa-linkedin-in"></i></a>
                                     </li>
                                 </ul>
                             </div>

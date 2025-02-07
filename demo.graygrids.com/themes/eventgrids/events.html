@@ -388,7 +388,62 @@
                 <button class="event-btn" onclick="filterSelection('Art')"> Artistic</button>
             </div>
             <div class="filter-search">
-                <input type="text" id="myInput" placeholder="Search" onkeyup="search()">
+                <div class="search-container">
+                    <input type="text" id="myInput" placeholder="Search" onkeyup="handleSearchInput()">
+                    <button id="searchButton" onclick="performSearch()">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <style>
+                    .search-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#searchButton {
+    height: 43px;
+    width: 43px;
+    background-color: #21d185;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+#searchButton:hover {
+    background-color: #1ab172;
+}
+
+#searchButton i {
+    font-size: 18px;
+}
+
+/* Update existing styles */
+#myInput {
+    width: 300px;
+    height: 43px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 0 12px;
+}
+
+@media screen and (max-width: 500px) {
+    #myInput {
+        width: 200px;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    #myInput {
+        width: 150px;
+    }
+}
+                </style>
                 <ul id="list">
                     <li class="item"><a href="#alliance" style="text-decoration: none;">Alliance</a></li>
                     <li class="item"><a href="#artSpace" style="text-decoration: none;">Art Space</a></li>
@@ -433,7 +488,7 @@
                     <li>Each participant should submit a single solution to each problem.</li>
                     <li>It consists of 2 categories. Programing and Web designing.</li>
                     <li>Final winner will be selected by panel of judges only.</li>
-                    <li>Contact: 9618379199</li>
+                    <li>Contact: 9573576544, 9392465584</li>
                     <button type="button" class="btn cancel" onclick="closeForm('popup-id1')">Close</button>
             </div>
 
@@ -458,7 +513,7 @@
                 <li>2nd Round : Name the unknown parts and explain its working.</li>
                 <li>3rd Round : One diagarm will be shown on the projector, and they have to draw on
                     CAM/CAD/CATIA in a specific time.</li>
-                <li>Contact: 9573277952</li>
+                <li>Contact: 7569177485</li>
                 <button type="button" class="btn cancel" onclick="closeForm('popup-id2')">Close</button>
             </div>
 
@@ -481,7 +536,7 @@
                 <li>1st round screening questions will be asked based on aptitude</li>
                 <li>2nd round questions related to ece and eee </li>
                 <li>3rd round- mock interview</li>
-                <li>Contact: 9640748058, 7989182841</li>
+                <li>Contact: 9063656569</li>
                 <button type="button" class="btn cancel" onclick="closeForm('popup-id3')">Close</button>
             </div>
 
@@ -505,7 +560,7 @@
                 <li>Round 2-ppt questions</li>
                 <li>We will display some questions related core and famous places you have to answer it.</li>
                 <li>Round 3-Buliding design drawing</li>
-                <li>Contact: 9866955009</li>
+                <li>Contact: 6300900493</li>
                 <button type="button" class="btn cancel" onclick="closeForm('popup-id4')">Close</button>
             </div>
 
@@ -529,7 +584,7 @@
                 <li>1st Round consists of problems related to basic maths.</li>
                 <li>2nd Round : QUalified persons will be divided into 2 groups i.Stocks ii.Tenders</li>
                 <li>judgement criteria is based on the optimal usage of money.</li>
-                <li>Contact: 9866955009, 9515745345</li>
+                <li>Contact: 9858203786, 8309965388</li>
                 <button type="button" class="btn cancel" onclick="closeForm('popup-id5')">Close</button>
             </div>
 
@@ -554,7 +609,7 @@
                 <li>2nd round: qualified persons should solve some logical questions, tricks, puzzles</li>
                 <li>3rd round: 1 vs 1 there will be some rules following those they should answer some questions. </li>
                 <li>All three rounds has time limit.</li>
-                <li>Contact: 7780549688</li>
+                <li>Contact: 7013698278</li>
                 <button type="button" class="btn cancel" onclick="closeForm('popup-id6')">Close</button>
             </div>
 
@@ -565,7 +620,7 @@
                     <img src="./assets/images/events/genisis.jpg" alt="Img">
                 </div><br>
                 <div class="event-content">
-                    <h5>GENESIS</h5>
+                    <h5>CASCADE</h5>
                     <h6>Fee: 60/-</h6>
                     <hr>
                     <button class="descBtn open-button" onclick="openForm('popup-id7')">Description</button>
@@ -573,9 +628,9 @@
                 </div>
             </div>
             <div class="popup-card" id="popup-id7">
-                <h2>GENESIS</h2>
+                <h2>CASCADE</h2>
                 <p>This event is open for all the branch people. </p>
-                <li>Contact: 9666631189</li>
+                <li>Contact: 9618181690</li>
                 <button type="button" class="btn cancel" onclick="closeForm('popup-id7')">Close</button>
             </div>
 
@@ -597,7 +652,7 @@
                 <li>1st Round is Screening Test.</li>
                 <li>2nd Round :Teams are formed and they have to search for treasures.</li>
                 <li>3rd Round : Investigation, you have to investigate the case with in the given time.</li>
-                <li>Contact: 9390086608</li>
+                <li>Contact: 9100259275</li>
                 <button type="button" class="btn cancel" onclick="closeForm('popup-id8')">Close</button>
             </div>
 
@@ -618,7 +673,7 @@
             <div class="popup-card" id="popup-id9">
                 <h2>IPL AUCTION</h2>
                 <li>Need to Update!</li>
-                <li>Contact: 9849217224</li>
+                <li>Contact: 7995592137</li>
                 <button type="button" class="btn cancel" onclick="closeForm('popup-id9')">Close</button>
             </div>
 
@@ -645,7 +700,7 @@
                 </li>
                 <li>4th Round : It's a Special Round revealed only on the day of event.</li>
                 <li>Final winner will be selected by panel of judges only.</li>
-                <li>Contact: 7989182841</li>
+                <li>Contact: 6300900493, 8247378920</li>
                 <button type="button" class="btn cancel" onclick="closeForm('popup-id10')">Close</button>
             </div>
 
@@ -666,7 +721,7 @@
             <div class="popup-card" id="popup-id11">
                 <h2>POSTER ARENA</h2>
                 <p>This event is open for all the branch people. </p>
-                <li>Contact: 9908890439, 7989171863</li>
+                <li>Contact: 7095389239, 9032004048</li>
                 <button type="button" class="btn cancel" onclick="closeForm('popup-id11')">Close</button>
             </div>
 
@@ -734,7 +789,7 @@
             <div class="popup-card" id="popup-id13">
                 <h2>MODEL MARATHON</h2>
                 <p>This event is open for all the branch people. </p>
-                <li>Contact: 9908890439, 9490144228</li>
+                <li>Contact: 8973131999, 6281901337</li>
                 <button type="button" class="btn cancel" onclick="closeForm('popup-id13')">Close</button>
             </div>
 
@@ -760,7 +815,7 @@
                 <li>Follow the rules for the procedure of debates, resolutions, amendments etc made during the
                     conference.</li>
                 <li>Final winner will be selected by panel of judges only.</li>
-                <li>Contact: 9666631189,9866363766</li>
+                <li>Contact: 7995592137, 6281901337</li>
                 <button type="button" class="btn cancel" onclick="closeForm('popup-id14')">Close</button>
             </div>
 
@@ -785,7 +840,7 @@
                 <li>1st round will be screening test</li>
                 <li>2nd round consists of some MCQ's.</li>
                 <li>Based on cutoff you will be moved into Finalround.</li>
-                <li>Contact: 7989171863</li>
+                <li>Contact: 9032004048, 9949051209</li>
                 <button type="button" class="btn cancel" onclick="closeForm('popup-id15')">Close</button>
             </div>
 
@@ -810,7 +865,7 @@
                 <li>Picture editing should be done through basic android apps only!</li>
                 <li>Each Participant can submit upto 10 entries</li>
                 <li>Usage of any automatic liking apps are strictly prohibited.</li>
-                <li>Contact: 9849105962</li>
+                <li>Contact: 9849105962, 7815938631</li>
                 <button type="button" class="btn cancel" onclick="closeForm('popup-id16')">Close</button>
             </div>
 
@@ -834,7 +889,7 @@
                 <li>ART Gallery : you can exhibit your previous paintings</li>
                 <li>SPOT painting : you can draw your ideas with the provided stationary.</li>
                 <li>No plagarisms will be encouraged. </li>
-                <li>Contact: 7981963421,9346597735</li>
+                <li>Contact: 9110338792, 9392465584</li>
                 <button type="button" class="btn cancel" onclick="closeForm('popup-id17')">Close</button>
             </div>
         </div>
@@ -874,16 +929,16 @@
                                 </span>
                                 <ul class="social d-none d-md-block">
                                     <li>
-                                        <a href="https://www.facebook.com/SrkrIste?mibextid=ZbWKwL"><i class="fa fa-facebook"></i></a>
+                                        <a href="https://www.facebook.com/SrkrIste?mibextid=ZbWKwL"><i class="fab fa-facebook-f"></i></a>
                                     </li>
                                     <li>
-                                        <a href="https://youtube.com/@srkriste1995?si=FJIk6QGKYsTnTDND"><i class="fa fa-youtube"></i></a>
+                                        <a href="https://youtube.com/@srkriste1995?si=FJIk6QGKYsTnTDND"><i class="fab fa-youtube"></i></a>
                                     </li>
                                     <li>
-                                        <a href="https://instagram.com/srkriste?igshid=OGQ5ZDc2ODk2ZA=="><i class="fa fa-instagram"></i></a>
+                                        <a href="https://instagram.com/srkriste?igshid=OGQ5ZDc2ODk2ZA=="><i class="fab fa-instagram"></i></a>
                                     </li>
                                     <li>
-                                        <a href="https://www.linkedin.com/company/srkriste/"><i class="fa fa-linkedin"></i></a>
+                                        <a href="https://www.linkedin.com/company/srkriste/"><i class="fab fa-linkedin-in"></i></a>
                                     </li>
                                 </ul>
                             </div>
@@ -1009,26 +1064,107 @@
         }
 
 
-        function search() {
-            var input = document.getElementById('myInput').value.toLowerCase();
-            let items = document.getElementsByClassName('item');
-            let list = document.getElementById('list');
-            let noResults = document.getElementById('demo');
-            let matchFound = false;
+        // Handle input changes
+function handleSearchInput() {
+    var input = document.getElementById('myInput').value.toLowerCase();
+    updateSearchResults(input);
+}
 
-            for (let i = 0; i < items.length; i++) {
-                let text = items[i].textContent.trim().toLowerCase();
-                if (text.startsWith(input)) {
-                    items[i].style.display = "list-item";
-                    matchFound = true;
-                } else {
-                    items[i].style.display = "none";
-                }
-            }
-            noResults.style.display = matchFound ? "none" : "block";
-            list.style.display = input ? "block" : "none";
+// Handle search button click
+function performSearch() {
+    var input = document.getElementById('myInput').value.toLowerCase();
+    updateSearchResults(input);
+    
+    // If there's only one result, automatically select it
+    let visibleItems = Array.from(document.getElementsByClassName('item'))
+        .filter(item => item.style.display !== 'none');
+    
+    if (visibleItems.length === 1) {
+        const eventId = visibleItems[0].querySelector('a').getAttribute('href').substring(1);
+        filterByEventId(eventId);
+        document.getElementById('list').style.display = "none";
+    }
+}
+
+// Update search results
+function updateSearchResults(input) {
+    let items = document.getElementsByClassName('item');
+    let list = document.getElementById('list');
+    let noResults = document.getElementById('demo');
+    let matchFound = false;
+
+    for (let i = 0; i < items.length; i++) {
+        let text = items[i].textContent.trim().toLowerCase();
+        if (text.startsWith(input)) {
+            items[i].style.display = "list-item";
+            // Add click event listener to each visible item
+            items[i].onclick = function(e) {
+                e.preventDefault();
+                const eventId = this.querySelector('a').getAttribute('href').substring(1);
+                filterByEventId(eventId);
+                list.style.display = "none";
+                document.getElementById('myInput').value = this.textContent;
+            };
+            matchFound = true;
+        } else {
+            items[i].style.display = "none";
+        }
+    }
+    
+    noResults.style.display = matchFound ? "none" : "block";
+    list.style.display = input ? "block" : "none";
+}
+
+function filterByEventId(eventId) {
+    // Get all event cards
+    var elements = document.getElementsByClassName("filterDiv");
+    
+    // Hide all events first
+    for (var i = 0; i < elements.length; i++) {
+        elements[i].style.display = "none";
+    }
+    
+    // Show only the selected event
+    var selectedEvent = document.getElementById(eventId);
+    if (selectedEvent) {
+        selectedEvent.style.display = "block";
+    }
+    
+    // Reset active button styles
+    var btns = document.getElementsByClassName("event-btn");
+    for (var i = 0; i < btns.length; i++) {
+        btns[i].style.backgroundColor = "#eef2eb";
+    }
+}
+
+// Modify the existing filterSelection function
+function filterSelection(className) {
+    var elements = document.getElementsByClassName("filterDiv");
+    if (className == "all") {
+        for (var i = 0; i < elements.length; i++) {
+            elements[i].style.display = "block";
+        }
+    } else {
+        for (var i = 0; i < elements.length; i++) {
+            elements[i].style.display = "none";
         }
 
+        var filteredElements = document.getElementsByClassName(className);
+        for (var i = 0; i < filteredElements.length; i++) {
+            filteredElements[i].style.display = "block";
+        }
+    }
+    // Clear the search input when using category filters
+    document.getElementById('myInput').value = '';
+    document.getElementById('list').style.display = "none";
+}
+
+// Add keyboard support for search
+document.getElementById('myInput').addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+        performSearch();
+    }
+});
 
 
 
