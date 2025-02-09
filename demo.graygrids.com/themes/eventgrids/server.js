@@ -1,12 +1,29 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mysql = require('mysql2');
+const path = require("path");
+
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
+;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+
+const htmlPath = __dirname;
+
+app.use(express.static(htmlPath)); 
+app.use(express.static(path.join(__dirname, "assets")));
+
+app.get("/", (req, res) => res.sendFile(path.join(htmlPath, "index.html")));
+app.get("/about-us", (req, res) => res.sendFile(path.join(htmlPath, "about-us.html")));
+app.get("/events", (req, res) => res.sendFile(path.join(htmlPath, "events.html")));
+app.get("/team", (req, res) => res.sendFile(path.join(htmlPath, "team.html")));
+app.get("/contact", (req, res) => res.sendFile(path.join(htmlPath, "contact.html")));
+
+
+
 
 const db = mysql.createConnection({
     host: 'localhost',

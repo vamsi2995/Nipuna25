@@ -1,11 +1,101 @@
-/* General Styling */
+/* Base Styles */
 body {
-  font-family: 'Arial', sans-serif;
-  background: linear-gradient(45deg, #3813c2, #F20487);
-  margin: 0;
-  padding: 0;
-  color: #fff;
+    background-color: #fff;
+    font-family: 'Inter', sans-serif;
 }
+
+/* Form Container */
+.form-container {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0px 0px 10px #00000013;
+    max-width: 800px;
+    margin: 40px auto;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .form-container {
+        padding: 20px;
+        margin: 30px auto;
+    }
+}
+
+@media (max-width: 767px) {
+    .form-container {
+        padding: 15px;
+        margin: 20px auto;
+    }
+}
+
+/* Form Elements */
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #101130;
+    font-weight: 500;
+}
+
+.form-control {
+    width: 100%;
+    height: 52px;
+    padding: 0 25px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    background-color: #fff;
+    transition: all 0.4s ease;
+}
+
+.form-control:focus {
+    border-color: #F20487;
+    box-shadow: 0 0 5px rgba(242, 4, 135, 0.2);
+}
+
+/* Submit Button */
+.btn {
+    padding: 15px 30px;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 5px;
+    background-color: #F20487;
+    color: #fff;
+    border: none;
+    transition: all 0.4s ease;
+    display: inline-flex;
+    align-items: center;
+}
+
+.btn:hover {
+    background-color: #101130;
+    color: #fff;
+}
+
+/* Responsive Typography */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    h1 {
+        font-size: 28px;
+        line-height: 38px;
+    }
+}
+
+@media (max-width: 767px) {
+    h1 {
+        font-size: 24px;
+        line-height: 32px;
+    }
+    
+    .form-control {
+        height: 45px;
+        padding: 0 20px;
+    }
+}
+
+
+
 
 h1 {
   text-align: center;
